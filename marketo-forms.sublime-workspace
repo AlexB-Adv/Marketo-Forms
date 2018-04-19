@@ -1,0 +1,570 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"g",
+				"getElementById〔function〕"
+			],
+			[
+				"back",
+				"background-attachment"
+			],
+			[
+				"console",
+				"console.log"
+			],
+			[
+				"head",
+				"head.clientHeight"
+			],
+			[
+				"cl",
+				"clientHeight"
+			],
+			[
+				"ge",
+				"getElementsByTagName〔function〕"
+			],
+			[
+				"c",
+				"clientHeight"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"backg",
+				"background-position"
+			],
+			[
+				"u",
+				"ul\tHTML - Unordered list"
+			],
+			[
+				"fo",
+				"footer\tTag"
+			],
+			[
+				"d",
+				"doctype\tHTML - HTML foundation"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"fl",
+				"flex-direction"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"al",
+				"text-align"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"wid",
+				"width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<script type=\"text/javascript\">\n\nvar tags = {\n\twebOwner \t\t: \"webOwner\",\n\tsolutionInterest: \"solutionInterest\",\n\tsectorInterest \t: \"sectorInterest\",\n\tproductInterest : \"productInterest\"\n};\n\n\nfunction getKeywords() {\n\treturn new Promise(function(succeed, fail) {\n\t\tvar meta = document.querySelector('meta[name=\"keywords\"]').getAttribute(\"content\").split(\", \");\n\t\tconsole.log(\"meta\", meta);\n\t\tif ( meta != null ) {\n\t\t\tsucceed(meta);\n\t\t} else {\n\t\t\tfail(new Error(\"keywords not found\"));\n\t\t}\n\t});\n}\n\n\nfunction getAField(field) {\n\treturn new Promise(function(succeed, fail) {\n\t\tvar aField = document.querySelector('input[value=\"'+ field +'\"]');\n\t\tconsole.log(\"field:\", aField);\n\t\tif ( aField != null ) {\n\t\t\tsucceed(aField);\n\t\t} else {\n\t\t\tfail(new Error(\"keywords not found\"));\n\t\t}\t\t\n\t});\n}\n\n\nfunction mapKeywordsToTags(keywords) {\n\treturn new Promise(function(succeed, fail) {\n\t\tif ( keywords != null ) {\n\t\t\t\n\t\t\tif ( keywords[0] ) {\n\t\t\t\ttags.webOwner = keywords[0];\n\t\t\t}\n\t\t\tif ( keywords[1] ) {\n\t\t\t\ttags.solutionInterest = keywords[1];\n\t\t\t}\n\t\t\tif ( keywords[2] ) {\n\t\t\t\ttags.sectorInterest = keywords[2];\n\t\t\t}\n\t\t\tif ( keywords[3] ) {\n\t\t\t\ttags.productInterest = keywords[3];\n\t\t\t}\n\t\t\tsucceed();\n\t\t} else {\n\t\t\tfail(new Error(\"keywords not found\"));\n\t\t}\t\t\n\t});\n}\n\n$(document).ready(function() {\n\t\tgetKeywords()\n\t\t.catch(function(error) {\n\t\t\tconsole.log(error);\n\t\t})\n\t\t.then(function(keywords) {\n\t\t\tconsole.log(\"keywords: \", keywords);\n\t\t\tmapKeywordsToTags(keywords);\n\t\t})\n\t\t.catch(function(error) {\n\t\t\tconsole.log(error);\n\t\t})\n\t\t.then(function() {\t\t\t\n\t\t\tgetAField(\"webOwner\").then(function(result) {\n\t\t\t\tresult.value = tags.webOwner;\n\t\t\t});\n\t\t\tgetAField(\"solutionInterest\").then(function(result) {\n\t\t\t\tresult.value = tags.solutionInterest;\n\t\t\t});\n\t\t\tgetAField(\"sectorInterest\").then(function(result) {\n\t\t\t\tresult.value = tags.sectorInterest;\n\t\t\t});\n\t\t\tgetAField(\"productInterest\").then(function(result) {\n\t\t\t\tresult.value = tags.productInterest;\n\t\t\t});\n\t\t});\t\n\t}\n);\n\n</script>",
+			"file": "script.js",
+			"file_size": 2590,
+			"file_write_time": 131638595632906488,
+			"settings":
+			{
+				"buffer_size": 1965,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<style>\n\t.title-bar {\n\t\tposition: absolute;\n\t\ttop: 0;\n\t\tright: 0;\n\t\tleft: 0;\n\t}\n\t.inner #brand ul li.site-logo a {\n\t\twidth: 223px;\n    height: 47px;\n    background: url(/Static/img/advanced-logo-header.png) left top no-repeat;\n    background-image: url(/Static/img/advanced-logo-header.svg),none;\n\t}\n</style>\n<div class=\"title-bar\">\n\t<div class=\"inner grid-container\">\n\t\t<div class=\"grid-x grid-margin-x align-middle\">\n\t\t\t<div id=\"brand\" class=\"cell large-4\">\n\t\t\t\t<ul class=\"grid-x grid-margin-x align-middle\">\n\t                    <li class=\"site-logo cell small-7\">\n\t                        <a href=\"/\" rel=\"home\" title=\"Advanced\">\n\t                            <span class=\"show-for-sr\">Advanced</span>\n\t                        </a>\n\t                    </li>\n\t                    <li class=\"menu-trigger cell small-5 hide-for-large\" id=\"mobile-menu-trigger\" data-toggler=\".menu-open\" aria-expanded=\"false\" data-t=\"tmvsmw-t\"><button data-toggle=\"primary-nav mobile-menu-trigger\"><div class=\"pull-right\"><span class=\"bar top\"></span><span class=\"bar center\"></span><span class=\"bar bottom\"></span></div></button></li>\n\t                </ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>",
+			"file": "/C/Users/Alex.Brown/Documents/Projects/fake-ppc-header.html",
+			"file_size": 0,
+			"file_write_time": 131679236609893623,
+			"settings":
+			{
+				"buffer_size": 1175,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/hpp.php",
+			"settings":
+			{
+				"buffer_size": 731,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Alex.Brown/Documents/Projects/country-switch/country-switch.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/composer.json",
+			"settings":
+			{
+				"buffer_size": 887,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/index.html",
+			"settings":
+			{
+				"buffer_size": 683,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "if (typeof $$epiforms !== 'undefined') {\n        $$epiforms(document).ready(function myfunction() {\n            console.log('listen to event');\n            $$epiforms(\".EPiServerForms\").on(\"formsNavigationNextStep formsNavigationPrevStep formsSetupCompleted formsReset formsStartSubmitting formsSubmitted formsSubmittedError formsNavigateToStep formsStepValidating\", function (event, param1, param2) {\n                console.log($(this).get(0), event);\n                ga('create', 'UA-26590643-7', 'auto');\n                ga('set', 'transport', 'beacon');\n                ga('send', 'event', {\n\t\t\t\t    eventCategory: event.workingFormInfo.Name,\n\t\t\t\t    eventAction: event.type,\n\t\t\t\t    eventLabel: event.target.baseURI,\n\t\t\t\t    transport: 'beacon'\n\t\t\t\t  });\n            });\n        });\n    }",
+			"file": "ga-events.js",
+			"file_size": 0,
+			"file_write_time": 131667213719309645,
+			"settings":
+			{
+				"buffer_size": 794,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 512.0,
+		"last_filter": "inst",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 678.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Alex.Brown/Documents/Projects/realex-payments/composer.json",
+		"/C/Users/Alex.Brown/Downloads/rxp-hpp-php-master/rxp-hpp-php-master/composer.json",
+		"/C/Users/Alex.Brown/Downloads/rxp-hpp-php-master/rxp-hpp-php-master/src/main/php/com-realexpayments-hpp-sdk/domain/HppRequest.php",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/gulpfile.js",
+		"/C/Users/Alex.Brown/Documents/EPiServer/Resources/CMSBootCamp/Practice Exercises/PracticeSite/PracticeSite/web.config",
+		"/C/Users/Alex.Brown/.npmrc",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/package.json",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/dev/assets/scss/style.scss",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/dev/assets/scripts/main.js",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/index.html",
+		"/C/Users/Alex.Brown/AppData/Roaming/npm-cache/_logs/2018-01-23T08_44_41_292Z-debug.log",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/build/assets/images/svg/phone.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/QuickBooks-Emulation/dev/assets/scss/_bootstrap-custom.scss",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/gulpfile.js",
+		"/C/Users/Alex.Brown/Downloads/animate.css",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/scss/style.scss",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/index.html",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/clipboard.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/process.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/js/main.js",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/package.json",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/css/style.css",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/gears.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/calendar.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/cloudGroup.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/assets/images/svg/cloud.svg",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/browser-sync.config.js",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/webpack.config.js",
+		"/C/Users/Alex.Brown/Documents/Projects/Interactive Infographics/postcss.config.js"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".page-wrap",
+			"fixed",
+			"flip"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#main"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								493,
+								493
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Alex.Brown/Documents/Projects/fake-ppc-header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1175
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/hpp.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								393,
+								393
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Alex.Brown/Documents/Projects/country-switch/country-switch.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								418,
+								418
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/Alex.Brown/Documents/Projects/realex-payments/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ga-events.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 794,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								794
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "marketo-forms.sublime-project",
+	"replace":
+	{
+		"height": 53.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 429.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
